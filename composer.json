@@ -1,13 +1,17 @@
 {
-    "name": "acseo/form-js-validation-bundle",
+    "name": "agepartnership/form-js-validation-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Form Js Validation Bundle",
     "keywords": ["Symfony", "form", "javascript", "validation"],
-    "homepage": "https://github.com/acseo/FormJsValidationBundle",
+    "homepage": "https://github.com/AgePartnership/FormJsValidationBundle",
     "authors": [
         {
             "name": "Nicolas Potier",
             "email": "nicolas.potier@acseo.fr"
+        },
+        {
+            "name": "Harry Brook-Dobson",
+            "email": "harry.brook-dobson@agepartnership.com"
         }
     ],
     "require": {
