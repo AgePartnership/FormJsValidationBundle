@@ -1,13 +1,13 @@
 # ACSEO Form JS Validation Bundle
 
-A bundle that add js validation to you forms
+A bundle that add js validation to your forms
 
 ## Installation
 
 1) Install using composer
 
 ```
-composer require acseo/form-js-validation-bundle
+composer require agepartnership/form-js-validation-bundle
 ```
 
 2) Update AppKernel.php :
@@ -25,7 +25,7 @@ class AppKernel extends Kernel
         // ...
 ```
 
-3) Select your js validation plugin between validation.io and jqueryvalidation.org in the parameters.yml :
+3) Select your js validation plugin between validation.io, jqueryvalidation.org and parsley in the parameters.yml :
 
 ```
 // app/config/parameters.yml
@@ -36,6 +36,8 @@ parameters:
     acseo_form_js_validation.service: acseo_form_js_validation_io
     // or to use the jqueryvalidation.org
     acseo_form_js_validation.service: acseo_form_jquery_form_validator
+    // or to use parsley validation
+    acseo_form_js_validation.service: agepartnership_form_parsley_form_validator
 ```
 
 ## Usage
@@ -103,6 +105,28 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
    $('#awesome_entity_form').validate();
+});
+</script>
+```
+
+#### Using Parsley https://parsleyjs.org/
+
+1) In your base template, include the parsley.js source file and jQuery >= 1.8
+
+2) In the template when the form is used, just update the code with this :
+
+```twig
+<!-- new.html.twig -->
+
+{{ form_start(form, {'attr': {'id': 'awesome_entity_form'}}) }}
+
+<!-- display your form here -->
+
+{{ form_end(form)}}
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#awesome_entity_form').parsley();
 });
 </script>
 ```
