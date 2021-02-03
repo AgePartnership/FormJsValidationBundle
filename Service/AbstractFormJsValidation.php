@@ -47,12 +47,13 @@ abstract class AbstractFormJsValidation
                     }
                 }
                 if ($innerType instanceof NumberType) {
+                    //TODO Set abstract Number type method & add to interface
                     $options["attr"] = array_merge(
                         array(
                             "data-rule-number" => 'true'
                         )
                     );
-                }                
+                }
                 if ($innerType instanceof RepeatedType) {
                     $firstOptions = isset($options["first_options"]) ? $options["first_options"] : array();
                     $options["first_options"] = $this->addRepeatedFieldJsValidation($mapping, $constraints, $field->get('first'), $firstOptions, $validationGroup);
