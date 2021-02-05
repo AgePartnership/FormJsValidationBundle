@@ -22,8 +22,8 @@
 
     },
     "autoload": {
-        "psr-0": { "ACSEO\\Bundle\\FormJsValidationBundle": "" }
+        "psr-0": { "AgePartnership\\Bundle\\FormJsValidationBundle": "" }
     },
-    "target-dir": "ACSEO/Bundle/FormJsValidationBundle",
+    "target-dir": "AgePartnership/Bundle/FormJsValidationBundle",
     "minimum-stability": "dev"
 }

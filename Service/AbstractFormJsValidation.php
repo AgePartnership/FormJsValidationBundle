@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -52,7 +52,7 @@ abstract class AbstractFormJsValidation
                             "data-rule-number" => 'true'
                         )
                     );
-                }                
+                }
                 if ($innerType instanceof RepeatedType) {
                     $firstOptions = isset($options["first_options"]) ? $options["first_options"] : array();
                     $options["first_options"] = $this->addRepeatedFieldJsValidation($mapping, $constraints, $field->get('first'), $firstOptions, $validationGroup);

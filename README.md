@@ -1,4 +1,4 @@
-# ACSEO Form JS Validation Bundle
+# AgePartnership Form JS Validation Bundle
 
 A bundle that add js validation to you forms
 
@@ -7,7 +7,7 @@ A bundle that add js validation to you forms
 1) Install using composer
 
 ```
-composer require acseo/form-js-validation-bundle
+composer require age-partnership/form-js-validation-bundle
 ```
 
 2) Update AppKernel.php :
@@ -21,7 +21,7 @@ class AppKernel extends Kernel
     {
         $bundles = [
         // ...
-        new ACSEO\Bundle\FormJsValidationBundle\ACSEOFormJsValidationBundle(),
+        new AgePartnership\Bundle\FormJsValidationBundle\AgePartnershipFormJsValidationBundle(),
         // ...
 ```
 
@@ -33,9 +33,9 @@ class AppKernel extends Kernel
 parameters:
     // ...
     // to use the validation.io
-    acseo_form_js_validation.service: acseo_form_js_validation_io
+    form_js_validation.service: form_js_validation_io
     // or to use the jqueryvalidation.org
-    acseo_form_js_validation.service: acseo_form_jquery_form_validator
+    form_js_validation.service: form_jquery_form_validator
 ```
 
 ## Usage
@@ -57,7 +57,7 @@ public function newAction(Request $request)
     );
 
     // ...
-    $form = $this->get("acseo_form_js_validation.service")->addJsValidation($form);
+    $form = $this->get("form_js_validation.service")->addJsValidation($form);
     // ...
 ```
 
