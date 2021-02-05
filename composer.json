@@ -1,5 +1,5 @@
 {
-    "name": "agepartnership/form-js-validation-bundle",
+    "name": "age-partnership/form-js-validation-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Form Js Validation Bundle",
     "keywords": ["Symfony", "form", "javascript", "validation"],
