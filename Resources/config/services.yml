@@ -1,14 +1,14 @@
 services:
-   acseo_form_js_validation:
-       class: ACSEO\Bundle\FormJsValidationBundle\Service\FormJsValidator
-       arguments: ["@=service(container.hasParameter('acseo_form_js_validation.service') ? parameter('acseo_form_js_validation.service') : 'acseo_form_jquery_form_validator')"]
+   age_partnership_form_js_validation:
+       class: AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidator
+       arguments: ["@=service(container.hasParameter('age_partnership_form_js_validation.service') ? parameter('age_partnership_form_js_validation.service') : 'age_partnership_form_jquery_form_validator')"]
 
-   acseo_form_jquery_form_validator:
-       class: ACSEO\Bundle\FormJsValidationBundle\Service\JqueryFormValidator
+   age_partnership_form_jquery_form_validator:
+       class: AgePartnership\Bundle\FormJsValidationBundle\Service\JqueryFormValidator
        arguments: ["@validator", "@translator" ]
 
-   acseo_form_js_validation_io:
-       class: ACSEO\Bundle\FormJsValidationBundle\Service\FormValidationIo
+   age_partnership_form_js_validation_io:
+       class: AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo
        arguments: ["@validator", "@translator" ]
 
    agepartnership_form_js_validation_parslet:

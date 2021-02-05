@@ -1,9 +1,9 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
-use ACSEO\Bundle\FormJsValidationBundle\Service\AbstractFormJsValidation;
-use ACSEO\Bundle\FormJsValidationBundle\Service\FormJsValidatorInterface;
+use AgePartnership\Bundle\FormJsValidationBundle\Service\AbstractFormJsValidation;
+use AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidatorInterface;
 
 class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsValidatorInterface
 {

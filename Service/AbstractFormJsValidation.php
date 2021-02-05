@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
