@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('form_js_validation');
+        $rootNode = $treeBuilder->root('age_partnership_form_js_validation');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

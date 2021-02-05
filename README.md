@@ -33,9 +33,9 @@ class AppKernel extends Kernel
 parameters:
     // ...
     // to use the validation.io
-    form_js_validation.service: form_js_validation_io
+    age_partnership_form_js_validation.service: age_partnership_form_js_validation_io
     // or to use the jqueryvalidation.org
-    form_js_validation.service: form_jquery_form_validator
+    age_partnership_form_js_validation.service: age_partnership_form_jquery_form_validator
 ```
 
 ## Usage
@@ -57,7 +57,7 @@ public function newAction(Request $request)
     );
 
     // ...
-    $form = $this->get("form_js_validation.service")->addJsValidation($form);
+    $form = $this->get("age_partnership_form_js_validation.service")->addJsValidation($form);
     // ...
 ```
 
