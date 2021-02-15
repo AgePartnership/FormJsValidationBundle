@@ -11,6 +11,6 @@ services:
        class: AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo
        arguments: ["@validator", "@translator" ]
 
-   agepartnership_form_js_validation_parslet:
+   agepartnership_form_js_validation_parsley:
        class: ACSEO\Bundle\FormJsValidationBundle\Service\ParsleyValidator
        arguments: ["@validator", "@translator" ]
