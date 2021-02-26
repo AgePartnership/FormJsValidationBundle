@@ -24,7 +24,7 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
             "Email" => function ($constraint, $translator) {
                 return array(
                     'data-parsley-type' => 'email',
-                    'data-msg-email' => $translator->trans($constraint->message),
+                    'data-parsley-type-message' => $translator->trans($constraint->message),
                 );
             },
             "Length" => function ($constraint, $translator) {
@@ -32,32 +32,32 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
                     // Min length only
                     return array(
                         "data-parsley-minlength" => $constraint->min,
-                        "data-msg-minlength" => $translator->trans($constraint->minMessage),
+                        "data-parsley-minlength-message" => $translator->trans($constraint->minMessage),
                     );
                 } elseif (!$constraint->min && $constraint->max) {
                     // Max length only
                     return array(
                         "data-parsley-maxlength" => $constraint->max,
-                        "data-msg-maxlength" => $translator->trans($constraint->maxMessage),
+                        "data-parsley-maxlength-message" => $translator->trans($constraint->maxMessage),
                     );
                 } elseif ($constraint->min && $constraint->max) {
                     // Length range
                     return array(
                         "data-parsley-length" => sprintf('[%d, %d]', $constraint->min, $constraint->max),
-                        "data-msg-rangelength" => $translator->trans($constraint->minMessage).". ".$translator->trans($constraint->maxMessage),
+                        "data-parsley-length-message" => $translator->trans($constraint->minMessage).". ".$translator->trans($constraint->maxMessage),
                     );
                 }
             },
             "Url" => function ($constraint, $translator) {
                 return array(
                     'data-parsley-type' => 'url',
-                    'data-msg-url' => $translator->trans($constraint->message),
+                    'data-parsley-type-message' => $translator->trans($constraint->message),
                 );
             },
             "Regex" => function ($constraint, $translator) {
                 return array(
                     'data-parsley-pattern' => $constraint->htmlPattern, //TODO Confirm correct pattern attribute for parsley
-                    'data-msg-url' => $translator->trans($constraint->message),
+                    'data-parsley-pattern-message' => $translator->trans($constraint->message),
                 );
             },
 
@@ -71,7 +71,7 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
             "NegativeOrZero" => function ($constraint, $translator) {
                 return array(
                     'data-parsley-max' => "0",
-                    'data-msg-url' => $translator->trans($constraint->message),
+                    'data-parsley-max-message' => $translator->trans($constraint->message),
                 );
             },
 
@@ -79,19 +79,19 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
             "LessThanOrEqual" => function ($constraint, $translator) {
                 return array(
                     "data-parsley-max" => $constraint->value,
-                    "data-msg-min" => $translator->trans($constraint->message),
+                    "data-parsley-max-message" => $translator->trans($constraint->message),
                 );
             },
             "GreaterThanOrEqual" => function ($constraint, $translator) {
                 return array(
                     "data-parsley-max" => $constraint->value,
-                    "data-msg-min" => $translator->trans($constraint->message),
+                    "data-parsley-max-message" => $translator->trans($constraint->message),
                 );
             },
             "Range" => function ($constraint, $translator) {
                 return array(
                     "data-parsley-range" => sprintf('[%d, %d]', $constraint->min, $constraint->max),
-                    "data-msg-min" => $translator->trans($constraint->message),
+                    "data-parsley-range-message" => $translator->trans($constraint->message),
                 );
             },
         ];
@@ -104,7 +104,7 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
         $parentOptions = $field->getParent()->getConfig()->getOptions();
 
         $attrOptions['data-parsley-equalTo'] = '#'.$this->getFieldId($field->getParent()->get('first'));
-        $attrOptions['data-msg-equalTo'] = $this->translator->trans(isset($parentOptions['invalid_message']) ? $parentOptions['invalid_message'] : 'Les deux champs doivent être identiques.');
+        $attrOptions['data-parsley-equalTo-message'] = $this->translator->trans(isset($parentOptions['invalid_message']) ? $parentOptions['invalid_message'] : 'Les deux champs doivent être identiques.');
 
         return $attrOptions;
     }
