@@ -1,16 +1,12 @@
 services:
-   age_partnership_form_js_validation:
-       class: AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidator
-       arguments: ["@=service(container.hasParameter('age_partnership_form_js_validation.service') ? parameter('age_partnership_form_js_validation.service') : 'age_partnership_form_jquery_form_validator')"]
+  AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidator:
+       arguments: ["@AgePartnership/Bundle/FormJsValidationBundle/Service/FormJsValidatorInterface"]
 
-   age_partnership_form_jquery_form_validator:
-       class: AgePartnership\Bundle\FormJsValidationBundle\Service\JqueryFormValidator
+  AgePartnership\Bundle\FormJsValidationBundle\Service\JqueryFormValidator:
        arguments: ["@validator", "@translator" ]
 
-   age_partnership_form_js_validation_io:
-       class: AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo
+  AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo:
        arguments: ["@validator", "@translator" ]
 
-   agepartnership_form_js_validation_parsley:
-       class: AgePartnership\Bundle\FormJsValidationBundle\Service\ParsleyFormValidator
+  AgePartnership\Bundle\FormJsValidationBundle\Service\ParsleyFormValidator:
        arguments: ["@validator", "@translator" ]
