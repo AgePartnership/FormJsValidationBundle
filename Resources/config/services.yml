@@ -1,12 +1,12 @@
 services:
-  AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidator:
-       arguments: ["@AgePartnership/Bundle/FormJsValidationBundle/Service/FormJsValidatorInterface"]
+    AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidator:
+        arguments: ['@AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidatorInterface']
 
-  AgePartnership\Bundle\FormJsValidationBundle\Service\JqueryFormValidator:
-       arguments: ["@validator", "@translator" ]
+    AgePartnership\Bundle\FormJsValidationBundle\Service\JqueryFormValidator:
+        arguments: ["@validator", "@translator"]
 
-  AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo:
-       arguments: ["@validator", "@translator" ]
+    AgePartnership\Bundle\FormJsValidationBundle\Service\FormValidationIo:
+        arguments: ["@validator", "@translator"]
 
-  AgePartnership\Bundle\FormJsValidationBundle\Service\ParsleyFormValidator:
-       arguments: ["@validator", "@translator" ]
+    AgePartnership\Bundle\FormJsValidationBundle\Service\ParsleyFormValidator:
+        arguments: ["@validator", "@translator"]
