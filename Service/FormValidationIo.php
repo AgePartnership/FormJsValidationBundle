@@ -34,4 +34,9 @@ class FormValidationIo extends AbstractFormJsValidation implements FormJsValidat
 
         return $mapping;
     }
+
+    protected function setNumberTypeAttribute()
+    {
+        return ["data-rule-number" => 'true'];
+    }
 }

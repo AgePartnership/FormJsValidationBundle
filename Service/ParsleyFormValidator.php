@@ -65,7 +65,7 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
             "PositiveOrZero" => function ($constraint, $translator) {
                 return array(
                     'data-parsley-min' => "0",
-                    'data-msg-url' => $translator->trans($constraint->message),
+                    'data-parsley-min-message' => $translator->trans($constraint->message),
                 );
             },
             "NegativeOrZero" => function ($constraint, $translator) {
@@ -107,5 +107,10 @@ class ParsleyFormValidator extends AbstractFormJsValidation implements FormJsVal
         $attrOptions['data-parsley-equalTo-message'] = $this->translator->trans(isset($parentOptions['invalid_message']) ? $parentOptions['invalid_message'] : 'Les deux champs doivent être identiques.');
 
         return $attrOptions;
+    }
+
+    protected function setNumberTypeAttribute()
+    {
+        return ['data-parsley-type' => 'number'];
     }
 }

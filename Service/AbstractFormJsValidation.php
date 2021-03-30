@@ -48,11 +48,7 @@ abstract class AbstractFormJsValidation
                 }
                 if ($innerType instanceof NumberType) {
                     //TODO Set abstract Number type method & add to interface
-                    $options["attr"] = array_merge(
-                        array(
-                            "data-rule-number" => 'true'
-                        )
-                    );
+                    $options["attr"] = array_merge($options["attr"], $this->setNumberTypeAttribute());
                 }
                 if ($innerType instanceof RepeatedType) {
                     $firstOptions = isset($options["first_options"]) ? $options["first_options"] : array();
@@ -112,4 +108,6 @@ abstract class AbstractFormJsValidation
     }
 
     abstract protected function getMapping();
+
+    abstract protected function setNumberTypeAttribute();
 }

@@ -102,4 +102,9 @@ class JqueryFormValidator extends AbstractFormJsValidation implements FormJsVali
 
         return $attrOptions;
     }
+
+    protected function setNumberTypeAttribute()
+    {
+        return ["data-rule-number" => 'true'];
+    }
 }
