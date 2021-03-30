@@ -64,16 +64,20 @@ class ParsleyFormValidatorTest extends TestCase
                     $this->assertEquals($fieldAttributes["data-parsley-length-message"], "variable2 must be at least 3 characters long. variable2 must be less than 10 characters long");
                     break;
                 case 'variable3':
+                    $fieldOptions = $field->getConfig()->getOptions();
+                    $fieldAttributes = $fieldOptions['attr'];
+
+                    $this->assertEquals($fieldAttributes["data-parsley-pattern"], "\d");
+                    $this->assertEquals($fieldAttributes["data-parsley-pattern-message"], "variable3 must be numeric");
                     break;
                 case 'variable4':
-                    break;
-                case 'variable5':
-                    break;
-                case 'variable6':
-                    break;
-                case 'variable7':
-                    break;
-                case 'variable8':
+                    $fieldOptions = $field->getConfig()->getOptions();
+                    $fieldAttributes = $fieldOptions['attr'];
+
+                    $this->assertEquals($fieldAttributes["data-parsley-min"], "0");
+                    $this->assertEquals($fieldAttributes["data-parsley-min-message"], "variable4 must be positive or zero");
+
+                    $this->assertEquals($fieldAttributes["data-parsley-type"], "number");
                     break;
                 default:
                     break;

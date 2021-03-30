@@ -1,6 +1,8 @@
 <?php
 namespace AgePartnership\Bundle\FormJsValidationBundle\Tests;
 
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -28,11 +30,7 @@ class TestFormType extends \Symfony\Component\Form\AbstractType
             ->add('variable1', TextType::class)
             ->add('variable2', TextType::class)
             ->add('variable3', TextType::class)
-            ->add('variable4', TextType::class)
-            ->add('variable5', TextType::class)
-            ->add('variable6', TextType::class)
-            ->add('variable7', TextType::class)
-            ->add('variable8', TextType::class);
+            ->add('variable4', NumberType::class);
     }
 
     /**

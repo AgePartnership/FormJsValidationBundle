@@ -75,6 +75,17 @@ class TestEntity
             'max' => 10,
             'minMessage' => 'variable2 must be at least 3 characters long',
             'maxMessage' => 'variable2 must be less than 10 characters long'
+        ]))
+        ->addPropertyConstraint('variable2', new Constraints\Url([
+            'message' => 'variable2 must be a URL'
+        ]))
+        ->addPropertyConstraint('variable3', new Constraints\Regex([
+            'pattern' => '/\d/',
+            'htmlPattern' => '\d',
+            'message' => 'variable3 must be numeric'
+        ]))
+        ->addPropertyConstraint('variable4', new Constraints\PositiveOrZero([
+            'message' => 'variable4 must be positive or zero'
         ]));
     }
 }
