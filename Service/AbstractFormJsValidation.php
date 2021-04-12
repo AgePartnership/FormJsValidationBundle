@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -47,12 +47,9 @@ abstract class AbstractFormJsValidation
                     }
                 }
                 if ($innerType instanceof NumberType) {
-                    $options["attr"] = array_merge(
-                        array(
-                            "data-rule-number" => 'true'
-                        )
-                    );
-                }                
+                    //TODO Set abstract Number type method & add to interface
+                    $options["attr"] = array_merge($options["attr"], $this->setNumberTypeAttribute());
+                }
                 if ($innerType instanceof RepeatedType) {
                     $firstOptions = isset($options["first_options"]) ? $options["first_options"] : array();
                     $options["first_options"] = $this->addRepeatedFieldJsValidation($mapping, $constraints, $field->get('first'), $firstOptions, $validationGroup);
@@ -111,4 +108,6 @@ abstract class AbstractFormJsValidation
     }
 
     abstract protected function getMapping();
+
+    abstract protected function setNumberTypeAttribute();
 }
