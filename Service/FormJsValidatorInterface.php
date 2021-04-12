@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
 interface FormJsValidatorInterface
 {

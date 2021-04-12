@@ -1,13 +1,13 @@
-# ACSEO Form JS Validation Bundle
+# AgePartnership Form JS Validation Bundle
 
-A bundle that add js validation to you forms
+A bundle that add js validation to your forms
 
 ## Installation
 
 1) Install using composer
 
 ```
-composer require acseo/form-js-validation-bundle
+composer require age-partnership/form-js-validation-bundle
 ```
 
 2) Update AppKernel.php :
@@ -21,11 +21,11 @@ class AppKernel extends Kernel
     {
         $bundles = [
         // ...
-        new ACSEO\Bundle\FormJsValidationBundle\ACSEOFormJsValidationBundle(),
+        new AgePartnership\Bundle\FormJsValidationBundle\AgePartnershipFormJsValidationBundle(),
         // ...
 ```
 
-3) Select your js validation plugin between validation.io and jqueryvalidation.org in the parameters.yml :
+3) Select your js validation plugin between validation.io, jqueryvalidation.org and parsley in the parameters.yml :
 
 ```
 // app/config/parameters.yml
@@ -33,9 +33,12 @@ class AppKernel extends Kernel
 parameters:
     // ...
     // to use the validation.io
-    acseo_form_js_validation.service: acseo_form_js_validation_io
+    age_partnership_form_js_validation.service: age_partnership_form_js_validation_io
     // or to use the jqueryvalidation.org
-    acseo_form_js_validation.service: acseo_form_jquery_form_validator
+    age_partnership_form_js_validation.service: age_partnership_form_jquery_form_validator
+    // or to use parsley validation
+    age_partnership_form_js_validation.service: age_partnership_form_parsley_form_validator
+
 ```
 
 ## Usage
@@ -57,7 +60,7 @@ public function newAction(Request $request)
     );
 
     // ...
-    $form = $this->get("acseo_form_js_validation.service")->addJsValidation($form);
+    $form = $this->get("age_partnership_form_js_validation.service")->addJsValidation($form);
     // ...
 ```
 
@@ -103,6 +106,28 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function() {
    $('#awesome_entity_form').validate();
+});
+</script>
+```
+
+#### Using Parsley https://parsleyjs.org/
+
+1) In your base template, include the parsley.js source file and jQuery >= 1.8
+
+2) In the template when the form is used, just update the code with this :
+
+```twig
+<!-- new.html.twig -->
+
+{{ form_start(form, {'attr': {'id': 'awesome_entity_form'}}) }}
+
+<!-- display your form here -->
+
+{{ form_end(form)}}
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#awesome_entity_form').parsley();
 });
 </script>
 ```

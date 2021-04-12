@@ -1,9 +1,9 @@
 <?php
 
-namespace ACSEO\Bundle\FormJsValidationBundle\Service;
+namespace AgePartnership\Bundle\FormJsValidationBundle\Service;
 
-use ACSEO\Bundle\FormJsValidationBundle\Service\AbstractFormJsValidation;
-use ACSEO\Bundle\FormJsValidationBundle\Service\FormJsValidatorInterface;
+use AgePartnership\Bundle\FormJsValidationBundle\Service\AbstractFormJsValidation;
+use AgePartnership\Bundle\FormJsValidationBundle\Service\FormJsValidatorInterface;
 
 class JqueryFormValidator extends AbstractFormJsValidation implements FormJsValidatorInterface
 {
@@ -101,5 +101,10 @@ class JqueryFormValidator extends AbstractFormJsValidation implements FormJsVali
         $attrOptions['data-msg-equalTo'] = $this->translator->trans(isset($parentOptions['invalid_message']) ? $parentOptions['invalid_message'] : 'Les deux champs doivent être identiques.');
 
         return $attrOptions;
+    }
+
+    protected function setNumberTypeAttribute()
+    {
+        return ["data-rule-number" => 'true'];
     }
 }
